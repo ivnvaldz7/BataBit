@@ -106,7 +106,7 @@ main{
     height: 200px;
     margin: 0 auto;
     margin-bottom: 50px;
-    background-image: url(/assets/imgs/bitcoin.svg);
+    background-image: url('./assets/imgs/bitcoin.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,6 +131,15 @@ main{
     max-width: 500px;
     height: auto;
     margin: 0 auto;
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.main_tables{
+    margin: 0 20px;
+    scroll-snap-align: center;
 }
 .main_tables_container--title{
     margin-bottom: 15px;
@@ -139,7 +148,7 @@ main{
     line-height: 2.3rem;
     color: var(--bitcoin-orange);
 }
-.main_tables{
+.main_tables_container--tables{
     display: grid;
     grid-template-columns: repeat(2, 101px);
     grid-template-rows: repeat(4, 39px);
@@ -178,6 +187,12 @@ main{
     font-weight: 400;
     justify-content: center;
 }
+.main_tables:nth-child(2) .main_tables_container--title{
+    color: var(--secondary-blue);
+}
+.main_tables:nth-child(2) .main_tables--date{
+    background-color: #E7F5FF;
+}
 .down{
     display: inline-block;
     width: 12px;
@@ -207,29 +222,7 @@ main{
     align-items: center;
     background-color: var(--soft-orange);
 }
-.main_tables--date .main_tables--date2 p{
-    font-size: 12px;
-    line-height: 19px;
-    font-weight: 400;
-}
-.main_tables_container--title2{
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 2.3rem;
-    color: var(--secondary-blue);
-}
-.main_tables--date2{
-    width: 173px;
-    height: 31px;
-    margin: 1.5rem 1.4rem 1.4rem;
-    font-weight: 700;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-blue);
-}
+
 .main_products_details{
     position: relative;
     width: 100%;
@@ -379,7 +372,7 @@ main{
 }
 .plans_container--cards{
     position: relative;
-    scroll-snap-align: center ;
+    scroll-snap-align: center;
     width: 70%;
     min-width: 190px;
     max-width: 300px;
@@ -448,6 +441,26 @@ main{
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
+}
+.plans_container--cards:nth-child(1) .recommended{
+    background-color: var(--secondary-blue);
+}
+.plans_container--cards:nth-child(3) .recommended{
+    background-color: var(--grey);
+}
+.plans_container--cards:nth-child(3){
+    background-color: var(--warm-black);
+    color: var(--grey);
+}
+.plans_container--cards:nth-child(3) .plan_card--title{
+    color: var(--just-white);
+}
+.plans_container--cards:nth-child(3) .plan_card--price{
+    color: var(--just-white);
+}
+.plans_container--cards:nth-child(3) .plan_card--ca{
+    background-color: var(--warm-black);
+    color: var(--just-white);
 }
 footer{
     display: flex;
